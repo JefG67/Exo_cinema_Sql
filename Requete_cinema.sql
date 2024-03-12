@@ -13,7 +13,15 @@ WHERE film.id_film = 1
  
 --b. Liste des films dont la durée excède 2h15 classés par durée (du + long au + court)
 
+SELECT 
+	film.titre_film,
+	film.duree_film
+FROM film 
+WHERE film.duree_film > 135
+ORDER BY film.duree_film DESC 
+
 --c. Liste des films d’un réalisateur (en précisant l’année de sortie) 
+
 
 
 --d. Nombre de films par genre (classés dans l’ordre décroissant)
