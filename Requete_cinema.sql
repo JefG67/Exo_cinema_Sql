@@ -38,7 +38,8 @@ SELECT
 	FROM genre_film
 	INNER JOIN categorie ON categorie.id_genre_film = genre_film.id_genre_film
 	INNER JOIN film ON film.id_film = categorie.id_film
-	GROUP BY genre_film.libelle
+	GROUP BY genre_film.libelle 
+	ORDER BY genre_film.libelle DESC;
 
 --e. Nombre de films par réalisateur (classés dans l’ordre décroissant)
 
