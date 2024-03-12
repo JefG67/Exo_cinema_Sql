@@ -33,6 +33,12 @@ WHERE film.id_realisateur = 3
 
 --d. Nombre de films par genre (classés dans l’ordre décroissant)
 
+SELECT 
+	genre_film.libelle, COUNT(film.id_film) AS nbrFilm
+	FROM genre_film
+	INNER JOIN categorie ON categorie.id_genre_film = genre_film.id_genre_film
+	INNER JOIN film ON film.id_film = categorie.id_film
+	GROUP BY genre_film.libelle
 
 --e. Nombre de films par réalisateur (classés dans l’ordre décroissant)
 
