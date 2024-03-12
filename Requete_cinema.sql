@@ -1,7 +1,16 @@
 --a. Informations d’un film (id_film) : titre, année, durée (au format HH:MM) et 
 --réalisateur
-
-
+SELECT
+	film.titre_film,
+	film.annee_de_sortie,
+	film.duree_film,
+	personne.nom,
+	personne.prenom
+	FROM film
+INNER JOIN realisateur ON film.id_realisateur = realisateur.id_realisateur
+INNER JOIN personne ON realisateur.id_personne = personne.id_personne
+WHERE film.id_film = 1
+ 
 --b. Liste des films dont la durée excède 2h15 classés par durée (du + long au + court)
 
 --c. Liste des films d’un réalisateur (en précisant l’année de sortie) 
