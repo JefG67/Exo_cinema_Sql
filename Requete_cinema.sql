@@ -122,3 +122,13 @@ SELECT
 
 
 --l. Acteurs ayant joué dans 3 films ou plus
+
+SELECT
+	personne.prenom,
+	personne.nom
+	FROM acteur
+	INNER JOIN personne ON acteur.id_personne = personne.id_personne
+	INNER JOIN casting ON acteur.id_acteur = casting.id_acteur
+	INNER JOIN film ON casting.id_film = film.id_film
+	GROUP BY personne.prenom, personne.nom
+	HAVING COUNT(casting.id_acteur) >=3
