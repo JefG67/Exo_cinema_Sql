@@ -85,6 +85,13 @@ SELECT
 
 --h. Liste des personnes qui sont à la fois acteurs et réalisateurs
 
+SELECT
+	personne.nom,
+	personne.prenom
+	FROM personne
+	INNER JOIN realisateur ON personne.id_personne = realisateur.id_personne
+	INNER JOIN acteur ON personne.id_personne = acteur.id_personne
+	GROUP BY personne.nom, personne.prenom
 
 --i. Liste des films qui ont moins de 5 ans (classés du plus récent au plus ancien)
 
