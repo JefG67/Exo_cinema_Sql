@@ -70,6 +70,18 @@ SELECT
 --g. Films tournés par un acteur en particulier (id_acteur) avec leur rôle et l’année de 
 --sortie (du film le plus récent au plus ancien)
 
+SELECT
+	
+	film.titre_film,
+	film.annee_de_sortie,
+	rolefilm.nom_role
+	FROM film
+	INNER JOIN casting ON film.id_film = casting.id_film
+	INNER JOIN rolefilm ON casting.id_role = rolefilm.id_role
+	INNER JOIN acteur ON casting.id_acteur = acteur.id_acteur
+	INNER JOIN personne ON acteur.id_personne = personne.id_personne
+	WHERE acteur.id_acteur = 1
+	ORDER BY film.annee_de_sortie DESC 
 
 --h. Liste des personnes qui sont à la fois acteurs et réalisateurs
 
