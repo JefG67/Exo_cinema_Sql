@@ -113,5 +113,12 @@ SELECT
 
 --k. Liste des acteurs ayant plus de 50 ans (âge révolu et non révolu)
 
+SELECT
+	 personne.prenom,
+	 personne.nom
+	 FROM acteur
+	 INNER JOIN personne ON acteur.id_personne = personne.id_personne
+	 WHERE YEAR(personne.date_naissance) <= YEAR(CURRENT_DATE) - 50;
+
 
 --l. Acteurs ayant joué dans 3 films ou plus
