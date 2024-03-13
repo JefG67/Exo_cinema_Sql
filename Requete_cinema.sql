@@ -96,11 +96,11 @@ SELECT
 --i. Liste des films qui ont moins de 5 ans (classés du plus récent au plus ancien)
 
 SELECT
-film.titre_film,
-film.annee_de_sortie
-FROM film
-WHERE annee_de_sortie BETWEEN 2019 AND 2024
-ORDER BY film.annee_de_sortie DESC; 
+	film.titre_film,
+	film.annee_de_sortie
+	FROM film
+	WHERE annee_de_sortie BETWEEN 2019 AND 2024
+	ORDER BY film.annee_de_sortie DESC; 
 
 --j. Nombre d’hommes et de femmes parmi les acteurs
 
