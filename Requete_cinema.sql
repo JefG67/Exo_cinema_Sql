@@ -3,7 +3,7 @@
 SELECT
 	film.titre_film,
 	film.annee_de_sortie,
-	film.duree_film,
+	film.duree_film, -- obtenir le format HH:MM remplacer par :  TIME_FORMAT(SEC_TO_TIME(film.duree_film * 60), '%Hh%imin') AS dure_film,
 	personne.nom,
 	personne.prenom
 	FROM film
