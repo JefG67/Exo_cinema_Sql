@@ -94,6 +94,17 @@ SELECT
 	GROUP BY personne.nom, personne.prenom
 
 --i. Liste des films qui ont moins de 5 ans (classés du plus récent au plus ancien)
+SELECT
+    titre_film,
+    annee_de_sortie
+FROM
+    film
+WHERE
+    annee_de_sortie >= YEAR(CURDATE()) - 5
+ORDER BY
+    annee_de_sortie DESC;
+
+ou mais moins bien
 
 SELECT
 	film.titre_film,
